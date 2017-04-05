@@ -1,4 +1,4 @@
-create user &&REPLICATION_USER identified by "temp_123" DEFAULT TABLESPACE &&DEFAULT_REPLICATION_TABLESPACE;
+create user &&REPLICATION_USER identified by "&PASSWORD" DEFAULT TABLESPACE &&DEFAULT_REPLICATION_TABLESPACE;
 alter user &&REPLICATION_USER quota unlimited on &&DEFAULT_REPLICATION_TABLESPACE;
 grant resource,create session to &&REPLICATION_USER ;
 grant select on v_$database to &&REPLICATION_USER ;

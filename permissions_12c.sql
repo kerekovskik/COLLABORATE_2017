@@ -1,4 +1,4 @@
-create user &&REPLICATION_USER identified by "temp_123" DEFAULT TABLESPACE &&DEFAULT_REPLICATION_TABLESPACE;
+create user &&REPLICATION_USER identified by "&PASSWORD" DEFAULT TABLESPACE &&DEFAULT_REPLICATION_TABLESPACE;
 alter user &&REPLICATION_USER quota unlimited on &&DEFAULT_REPLICATION_TABLESPACE;
 grant resource,create session to &&REPLICATION_USER CONTAINER=ALL;
 grant select on v_$database to &&REPLICATION_USER CONTAINER=ALL;
@@ -21,3 +21,4 @@ grant insert any table to &&REPLICATION_USER CONTAINER=ALL;
 grant update any table to &&REPLICATION_USER CONTAINER=ALL;
 grant drop any table to &&REPLICATION_USER CONTAINER=ALL;
 grant logmining to &&REPLICATION_USER CONTAINER=ALL;
+grant set container to &&REPLICATION_USER container=ALL;
